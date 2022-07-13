@@ -1,4 +1,4 @@
-module gitlab.nymte.ch/nym/coconut/coconutGo
+module github.com/probablespace/goconut
 
 go 1.15
 

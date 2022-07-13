@@ -17,9 +17,10 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
+	coconut "github.com/goconut/scheme"
 	"github.com/spf13/cobra"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	coconut "gitlab.nymte.ch/nym/coconut/coconutGo/scheme"
 )
 
 var (
@@ -28,12 +29,11 @@ var (
 		Short: "Proves the provided Coconut signature",
 		Run:   runProveCmd,
 	}
-	numberOfAttributesProve uint32
+	numberOfAttributesProve   uint32
 	rawPrivateAttributesProve string
-	rawSignatureProve string
-	rawKeyProve string
+	rawSignatureProve         string
+	rawKeyProve               string
 )
-
 
 func init() {
 	proveCmd.PersistentFlags().Uint32VarP(&numberOfAttributesProve, "attributes", "a", 1, "number of attributes allowed in credential")

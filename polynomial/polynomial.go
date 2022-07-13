@@ -18,7 +18,6 @@ package polynomial
 // dependencies ...
 
 import (
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
 	"math/big"
 )
 

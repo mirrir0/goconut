@@ -16,7 +16,8 @@ package coconut
 
 import (
 	"errors"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
+
+	"github.com/goconut/utils"
 )
 
 // MarshalBinary is an implementation of a method on the

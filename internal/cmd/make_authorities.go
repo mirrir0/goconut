@@ -17,16 +17,17 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
+	coconut "github.com/goconut/scheme"
 	"github.com/spf13/cobra"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	coconut "gitlab.nymte.ch/nym/coconut/coconutGo/scheme"
 )
 
 var (
-	attributesInit uint32
-	threshold uint64
+	attributesInit      uint32
+	threshold           uint64
 	numberOfAuthorities uint64
-	makeAuthoritiesCmd = &cobra.Command{
+	makeAuthoritiesCmd  = &cobra.Command{
 		Use:   "init-issuers [-n number-of-auth] [-t threshold] [-a number-of-attributes]",
 		Short: "Creates set of threshold coconut authorities",
 		Run:   runInitIssuers,
@@ -49,8 +50,6 @@ func init() {
 
 	rootCmd.AddCommand(makeAuthoritiesCmd)
 }
-
-
 
 func runInitIssuers(cmd *cobra.Command, args []string) {
 	params, err := coconutGo.Setup(attributesInit)

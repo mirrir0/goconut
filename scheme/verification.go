@@ -16,9 +16,9 @@ package coconut
 
 import (
 	"errors"
+
 	"github.com/consensys/gurvy/bls381"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
+	"github.com/goconut/utils"
 )
 
 // Theta

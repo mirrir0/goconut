@@ -18,11 +18,12 @@ import (
 	"crypto/sha256"
 	"encoding/binary"
 	"errors"
-	"github.com/consensys/gurvy/bls381"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/elgamal"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
 	"math/big"
+
+	"github.com/consensys/gurvy/bls381"
+	"github.com/goconut/elgamal"
+	"github.com/goconut/utils"
+	"gitlab.nymte.ch/nym/coconut/coconutGo"
 )
 
 // ConstructChallenge construct a scalar challenge by hashing a number of elliptic curve points.

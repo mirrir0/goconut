@@ -15,10 +15,11 @@
 package elgamal
 
 import (
+	"testing"
+
+	"github.com/goconut/utils"
 	"github.com/stretchr/testify/assert"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
-	"testing"
 )
 
 func TestPrivateKeyBytesRoundtrip(t *testing.T) {

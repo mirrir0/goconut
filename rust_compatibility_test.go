@@ -15,11 +15,12 @@
 package coconutGo
 
 import (
-	"github.com/consensys/gurvy/bls381/fr"
-	"github.com/stretchr/testify/assert"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
 	"math/big"
 	"testing"
+
+	"github.com/consensys/gurvy/bls381/fr"
+	"github.com/goconut/utils"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestScalarSerialization(t *testing.T) {

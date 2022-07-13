@@ -17,8 +17,9 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
+	coconut "github.com/goconut/scheme"
 	"github.com/spf13/cobra"
-	coconut "gitlab.nymte.ch/nym/coconut/coconutGo/scheme"
 )
 
 var (
@@ -28,7 +29,7 @@ var (
 		Run:   runUnblindCmd,
 	}
 	rawPrivateKeyUnblind string
-	rawBlindedSignature string
+	rawBlindedSignature  string
 )
 
 func parseBlindedSignature(raw string) coconut.BlindedSignature {
@@ -38,7 +39,7 @@ func parseBlindedSignature(raw string) coconut.BlindedSignature {
 	}
 	var rawBytes [144]byte
 	copy(rawBytes[:], decoded)
-	
+
 	sig, err := coconut.BlindedSignatureFromBytes(rawBytes)
 	if err != nil {
 		panic("failed to recover provided blinded signature!")
@@ -63,7 +64,7 @@ func init() {
 func runUnblindCmd(cmd *cobra.Command, args []string) {
 	privateKey := parseElGamalPrivate(rawPrivateKeyUnblind)
 	blindedSig := parseBlindedSignature(rawBlindedSignature)
-	
+
 	sig := blindedSig.Unblind(&privateKey)
 
 	sigBytes := sig.Bytes()

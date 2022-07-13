@@ -17,11 +17,11 @@ package coconut
 import (
 	"encoding/binary"
 	"errors"
-	"github.com/consensys/gurvy/bls381"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/elgamal"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
 	"math/big"
+
+	"github.com/consensys/gurvy/bls381"
+	"github.com/goconut/elgamal"
+	"github.com/goconut/utils"
 )
 
 // Lambda

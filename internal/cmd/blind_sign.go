@@ -17,9 +17,10 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
+	coconut "github.com/goconut/scheme"
 	"github.com/spf13/cobra"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	coconut "gitlab.nymte.ch/nym/coconut/coconutGo/scheme"
 )
 
 var (
@@ -28,11 +29,11 @@ var (
 		Short: "Creates a Coconut credential on the provided attributes with given signers",
 		Run:   runBlindSign,
 	}
-	attributesSign                uint32
-	rawIssuerKey                  string
-	rawPublicAttributesBlindSign  string
-	rawPublicKeyBlindSign         string
-	rawLambda                     string
+	attributesSign               uint32
+	rawIssuerKey                 string
+	rawPublicAttributesBlindSign string
+	rawPublicKeyBlindSign        string
+	rawLambda                    string
 )
 
 func parseLambda(raw string) coconut.BlindSignRequest {

@@ -17,8 +17,9 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
+	coconut "github.com/goconut/scheme"
 	"github.com/spf13/cobra"
-	coconut "gitlab.nymte.ch/nym/coconut/coconutGo/scheme"
 )
 
 var (
@@ -27,7 +28,7 @@ var (
 		Short: "Aggregates the provided coconut threshold signatures",
 		Run:   runAggregateSigs,
 	}
-	rawSigs  string
+	rawSigs         string
 	rawSigsInndices string
 )
 

@@ -14,7 +14,7 @@
 
 package main
 
-import "gitlab.nymte.ch/nym/coconut/coconutGo/internal/cmd"
+import "github.com/goconut/internal/cmd"
 
 func main() {
 	cmd.Execute()

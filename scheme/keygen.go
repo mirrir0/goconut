@@ -17,12 +17,12 @@ package coconut
 import (
 	"encoding/binary"
 	"errors"
+	"math/big"
+
 	"github.com/consensys/gurvy/bls381"
 	"github.com/consensys/gurvy/bls381/fr"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/polynomial"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
-	"math/big"
+	"github.com/goconut/polynomial"
+	"github.com/goconut/utils"
 )
 
 // SecretKey represents secret key of a Coconut signing authority.

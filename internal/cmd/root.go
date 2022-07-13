@@ -17,19 +17,19 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
-	"github.com/spf13/cobra"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/elgamal"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/internal/utils"
-	coconut "gitlab.nymte.ch/nym/coconut/coconutGo/scheme"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/goconut/elgamal"
+	"github.com/goconut/internal/utils"
+	coconut "github.com/goconut/scheme"
+	"github.com/spf13/cobra"
 )
 
 var (
 	rootCmd = &cobra.Command{
-		Use: "coconut-cli",
+		Use:   "coconut-cli",
 		Short: "coconut-go simple CLI for testing cross-language testing purposes",
 	}
 )
@@ -164,7 +164,6 @@ func parseSignature(raw string) coconut.Signature {
 	}
 	return sig
 }
-
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {

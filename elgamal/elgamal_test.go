@@ -15,9 +15,10 @@
 package elgamal
 
 import (
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
 	"testing"
+
+	"github.com/goconut/utils"
+	"gitlab.nymte.ch/nym/coconut/coconutGo"
 
 	"github.com/stretchr/testify/assert"
 )

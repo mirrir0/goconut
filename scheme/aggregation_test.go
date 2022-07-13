@@ -16,13 +16,14 @@ package coconut
 
 import (
 	"fmt"
-	"github.com/consensys/gurvy/bls381"
-	"github.com/stretchr/testify/assert"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
 	"math/rand"
 	"testing"
 	"time"
+
+	"github.com/consensys/gurvy/bls381"
+	"github.com/goconut/utils"
+	"github.com/stretchr/testify/assert"
+	"gitlab.nymte.ch/nym/coconut/coconutGo"
 )
 
 // just helpers
@@ -191,23 +192,23 @@ func TestSignatureAggregationForAnySignatureSubset(t *testing.T) {
 
 	// checking random permutations
 	for i := 0; i < 100; i++ {
-		indices := []SignerIndex{1,2,3,4,5}
+		indices := []SignerIndex{1, 2, 3, 4, 5}
 		rand.Seed(time.Now().UnixNano())
 		rand.Shuffle(len(indices), func(i, j int) { indices[i], indices[j] = indices[j], indices[i] })
 		sigsLocal := make([]*Signature, 3)
-		sigsLocal[0] = sigs[int(indices[0]) - 1]
-		sigsLocal[1] = sigs[int(indices[1]) - 1]
-		sigsLocal[2] = sigs[int(indices[2]) - 1]
+		sigsLocal[0] = sigs[int(indices[0])-1]
+		sigsLocal[1] = sigs[int(indices[1])-1]
+		sigsLocal[2] = sigs[int(indices[2])-1]
 
 		aggr, err := AggregateSignatures(sigsLocal, indices[:3])
 		unwrapError(err)
 		assert.True(t, aggrSig1.Equal(&aggr), fmt.Sprintf("%v X:%v\nY:%v\nZ:%v", indices[:3], aggr.sig2.X, aggr.sig2.Y, aggr.sig2.Z))
 	}
 
-	sigs2 := []*Signature {
+	sigs2 := []*Signature{
 		sigs[3], sigs[1], sigs[0],
 	}
-	idx := []SignerIndex{4,2,1}
+	idx := []SignerIndex{4, 2, 1}
 	aggr, err := AggregateSignatures(sigs2, idx)
 	unwrapError(err)
 

@@ -17,6 +17,7 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
 	"github.com/spf13/cobra"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
 )
@@ -29,7 +30,6 @@ var (
 	}
 	rawSignatureRandomize string
 )
-
 
 func init() {
 	randomizeCmd.PersistentFlags().StringVar(&rawSignatureRandomize, "sig", "", "coconut signature")

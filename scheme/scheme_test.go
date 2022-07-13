@@ -15,13 +15,14 @@
 package coconut
 
 import (
-	"github.com/consensys/gurvy/bls381"
-	"github.com/stretchr/testify/assert"
-	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/elgamal"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
 	"math/big"
 	"testing"
+
+	"github.com/consensys/gurvy/bls381"
+	"github.com/goconut/elgamal"
+	"github.com/goconut/utils"
+	"github.com/stretchr/testify/assert"
+	"gitlab.nymte.ch/nym/coconut/coconutGo"
 )
 
 func unwrapError(err error) {

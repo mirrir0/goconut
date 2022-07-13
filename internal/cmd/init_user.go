@@ -17,23 +17,23 @@ package cmd
 import (
 	"encoding/base64"
 	"fmt"
+
+	"github.com/goconut/elgamal"
 	"github.com/spf13/cobra"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/elgamal"
 )
 
 var (
 	initUserCmd = &cobra.Command{
-		Use: "init-user",
+		Use:   "init-user",
 		Short: "generates an ephemeral ElGamal keypair for a Coconut user",
-		Run: runInitUser,
+		Run:   runInitUser,
 	}
 )
 
 func init() {
 	rootCmd.AddCommand(initUserCmd)
 }
-
 
 func runInitUser(cmd *cobra.Command, args []string) {
 	params, err := coconutGo.Setup(1)

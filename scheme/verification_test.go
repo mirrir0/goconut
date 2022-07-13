@@ -15,11 +15,12 @@
 package coconut
 
 import (
+	"testing"
+
+	"github.com/goconut/elgamal"
+	"github.com/goconut/utils"
 	"github.com/stretchr/testify/assert"
 	"gitlab.nymte.ch/nym/coconut/coconutGo"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/elgamal"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
-	"testing"
 )
 
 func TestVerificationOnTwoPublicAttributes(t *testing.T) {

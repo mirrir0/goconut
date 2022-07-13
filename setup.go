@@ -20,10 +20,11 @@ package coconutGo
 import (
 	"errors"
 	"fmt"
+	"math/big"
+
 	"github.com/consensys/gurvy/bls381"
 	"github.com/consensys/gurvy/bls381/fr"
-	"gitlab.nymte.ch/nym/coconut/coconutGo/utils"
-	"math/big"
+	"github.com/goconut/utils"
 )
 
 type Parameters struct {
